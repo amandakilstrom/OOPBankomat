@@ -6,23 +6,21 @@ using System.Threading.Tasks;
 
 namespace OOPBankomat
 {
-    internal class Withdrawl : AccountInfo
+    internal class Withdraw 
     {
-        public Withdrawl(int accountNbr, String accountName, Double interestRate, Double balance, Double maxCredit) : base(accountNbr, accountName, interestRate, balance, maxCredit){ }
-
-        public Double GetWithdrawl(Double amount)
+        public static Double GetWithdraw(Double amount, Double balance, Double credit)
         {
-            if (Balance - amount >= MaxCredit)
+            if (balance - amount < credit)
             {
                 Console.WriteLine("The maximum credit has been reached");
             }
             else
             {
                 Console.WriteLine("Your transaction is complete");
-                Balance -= amount;
+                balance -= amount;
             }
 
-            return Balance;
+            return balance;
         }
     }
 }
