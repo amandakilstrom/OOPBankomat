@@ -1,0 +1,20 @@
+Skriv programmet på engelska
+
+AccountInfo ska ha metoder eller funktioner av MaxCredit och InterestRate
+
+Ger menyn i en do while loop
+
+Gör en funktion som kan lägg till fler konton. Eventuellt att det blir i en egen klass
+
+Hitta ett sätt att söka på objekt som ligget i en lista
+
+testa
+foreach (account in accouts)
+{
+	if (vilkor == AccountInfo.AccountNbr)
+	{
+		GetDeposit();
+	}
+}
+
+Ändra i withdrawl så att den inte ärver längre
