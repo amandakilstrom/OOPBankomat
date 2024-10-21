@@ -17,4 +17,8 @@ foreach (account in accouts)
 	}
 }
 
-Ändra i withdrawl så att den inte ärver längre
+Ändra i withdraw så att den inte ärver längre
+
+Fixa en add account
+
+Randomnisera accountNbr men det får inte finnas några med samma nummer i listan
