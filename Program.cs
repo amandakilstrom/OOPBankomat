@@ -16,7 +16,7 @@
 
             do
             {
-                Console.WriteLine("1. Make a deposit\n2. Make a withdrawl\n3. Show balance\n4. Show all accounts balance\n5. Exit bank");
+                Console.WriteLine("1. Make a deposit\n2. Make a withdrawl\n3. Show balance\n4. Show all accounts balance\n5. Add new account\n6. Exit Bank");
                 Int32.TryParse(Console.ReadLine(), out int menuChioce);
 
                 if (menuChioce == 1)
@@ -78,6 +78,10 @@
                     }
                 }
                 else if (menuChioce == 5)
+                {
+                    accounts.Add(AddAccount.GetAddAccount());
+                }
+                else if (menuChioce == 6)
                 {
                     exit = false;
                 }
