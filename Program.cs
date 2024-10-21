@@ -21,39 +21,13 @@
 
                 if (menuChioce == 1)
                 {
-                    Console.Write("Enter account number: ");
-                    Int32.TryParse(Console.ReadLine(), out int searchAccountNumber);
-
-                    Console.Write("How much would you like to deposit: ");
-                    Double.TryParse(Console.ReadLine(), out double amount);
-
-                    foreach (AccountInfo account in accounts)
-                    {
-                        Console.WriteLine(account.Balance);
-
-                        if (account.AccountNbr == searchAccountNumber)
-                        {
-                            Double newBalance = Deposit.GetDeposit(amount, account.Balance);
-                            account.Balance = newBalance;
-                        }
-                    }
+                    Deposit.GetDeposit(accounts);
+                    EndMenu();
                 }
                 else if (menuChioce == 2)
                 {
-                    Console.Write("Enter account number: ");
-                    Int32.TryParse(Console.ReadLine(), out int searchAccountNumber);
-
-                    Console.Write("How much would you like to withdraw: ");
-                    Double.TryParse(Console.ReadLine(),out double amount);
-
-                    foreach (AccountInfo account in accounts)
-                    {
-                        if (account.AccountNbr == searchAccountNumber)
-                        {
-                            Double newBalance = Withdraw.GetWithdraw(amount, account.Balance, account.MaxCredit);
-                            account.Balance = newBalance;
-                        }
-                    }
+                    Withdraw.GetWithdraw(accounts);
+                    EndMenu();
                 }
                 else if (menuChioce == 3)
                 {
@@ -67,6 +41,7 @@
                             Console.WriteLine($"Your current balance is: {account.Balance}");
                         }
                     }
+                    EndMenu();
                 }
                 else if (menuChioce == 4)
                 {
@@ -76,10 +51,12 @@
                     {
                         Console.WriteLine($"Account number {account.AccountNbr} has balance {account.Balance}");
                     }
+                    EndMenu();
                 }
                 else if (menuChioce == 5)
                 {
                     accounts.Add(AddAccount.GetAddAccount());
+                    EndMenu();
                 }
                 else if (menuChioce == 6)
                 {

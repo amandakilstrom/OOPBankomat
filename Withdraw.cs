@@ -8,19 +8,29 @@ namespace OOPBankomat
 {
     internal class Withdraw 
     {
-        public static Double GetWithdraw(Double amount, Double balance, Double credit)
+        public static void GetWithdraw(List<AccountInfo> accounts)
         {
-            if (balance - amount < credit)
-            {
-                Console.WriteLine("The maximum credit has been reached");
-            }
-            else
-            {
-                Console.WriteLine("Your transaction is complete");
-                balance -= amount;
-            }
+            Console.Write("Enter account number: ");
+            Int32.TryParse(Console.ReadLine(), out int searchAccountNumber);
 
-            return balance;
+            Console.Write("How much would you like to withdraw: ");
+            Double.TryParse(Console.ReadLine(), out double amount);
+
+            foreach (AccountInfo account in accounts)
+            {
+                if (account.AccountNbr == searchAccountNumber)
+                {
+                    if (account.Balance - amount < account.MaxCredit)
+                    {
+                        Console.WriteLine("The maximum credit has been reached");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Your transaction is complete");
+                        account.Balance -= amount;
+                    }
+                }
+            }
         }
     }
 }
