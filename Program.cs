@@ -55,7 +55,7 @@
                 }
                 else if (menuChioce == 5)
                 {
-                    accounts.Add(AddAccount.GetAddAccount());
+                    accounts.Add(AddAccount.GetAddAccount(accounts));
                     EndMenu();
                 }
                 else if (menuChioce == 6)

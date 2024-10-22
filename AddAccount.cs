@@ -8,7 +8,7 @@ namespace OOPBankomat
 {
     internal class AddAccount
     {
-        public static AccountInfo GetAddAccount()
+        public static AccountInfo GetAddAccount(List<AccountInfo> listAccounts)
         {
             Console.Write("Enter new account number: ");
             Int32.TryParse(Console.ReadLine(), out int accountNbr);
@@ -16,7 +16,7 @@ namespace OOPBankomat
             Console.Write("What is the account name? ");
             String? name = Console.ReadLine();
 
-            if (name is null)
+            if (name is null || name == "")
             {
                 name = "Unknown";
             }
