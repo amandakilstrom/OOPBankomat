@@ -4,11 +4,15 @@
     {
         static void Main(string[] args)
         {
-            AccountInfo account1 = new AccountInfo(111111, "John Smith", 2.5, 10000, -1000);
+            AccountInfo account1 = new AccountInfo(1, "John Smith", 2.5, 10000, -1000);
+            AccountInfo account2 = new AccountInfo(2, "Jane Smith", 2.0, 50000, -1000);
+            AccountInfo account3 = new AccountInfo(3, "Elma Smith", 2.3, 30000, -1000);
 
             List<AccountInfo> accounts = new List<AccountInfo>();
 
             accounts.Add(account1);
+            accounts.Add(account2);
+            accounts.Add(account3);
 
             bool exit = true;
 
@@ -16,7 +20,12 @@
 
             do
             {
-                Console.WriteLine("1. Make a deposit\n2. Make a withdrawl\n3. Show balance\n4. Show all accounts balance\n5. Add new account\n6. Exit Bank");
+                Console.WriteLine("1. Make a deposit" +
+                    "\n2. Make a withdrawl" +
+                    "\n3. Show balance" +
+                    "\n4. Show all accounts balance" +
+                    "\n5. Add new account\n6. Remove one account" +
+                    "\n7. Sort accounts\n9. Exit Bank");
                 Int32.TryParse(Console.ReadLine(), out int menuChioce);
 
                 if (menuChioce == 1)
@@ -60,6 +69,27 @@
                 }
                 else if (menuChioce == 6)
                 {
+                    // Kallar på GetRemoveAccount metoden för att ta bort ett konto
+                    RemoveAccount.GetRemoveAccount(accounts);
+                    EndMenu();
+                }
+                else if (menuChioce == 7)
+                {
+                    // Kallar på GetSort metoden och skickar med listan
+                    SortAccounts.GetSort(accounts);
+                    // Skriver ut den sorterade listan åt användaren
+                    foreach (AccountInfo account in accounts)
+                    {
+                        Console.WriteLine($"Account Number: {account.AccountNbr} " +
+                            $" Account name: {account.AccountName} " +
+                            $" Interest rate: {account.InterestRate} " +
+                            $" Balance: {account.Balance} " +
+                            $" Max credit: {account.MaxCredit}");
+                    }
+                    EndMenu();
+                }
+                else if (menuChioce == 9)
+                {
                     exit = false;
                 }
             }
@@ -70,6 +100,7 @@
         {
             Console.WriteLine("Press 'enter' to go back to main menu");
             Console.ReadLine();
+            Console.Clear();
         }
     }
 }

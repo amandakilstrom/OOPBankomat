@@ -28,6 +28,7 @@ namespace OOPBankomat
                     {
                         Console.WriteLine("Your transaction is complete");
                         account.Balance -= amount;
+                        return;
                     }
                 }
                 else
