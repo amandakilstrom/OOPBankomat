@@ -8,12 +8,14 @@ namespace OOPBankomat
 {
     internal class AccountInfo
     {
+        // Dom olika parameterna som kontot innehåller
         public int AccountNbr { get; set; } 
         public String AccountName { get; set; }
         public Double InterestRate { get; set; } 
         public Double Balance { get; set; }
         public Double MaxCredit { get; set; }
 
+        // En konstruktur som talar om hur parametrarna ska användas
         public AccountInfo(int accountNbr, String accountName, Double interestRate, Double balance, Double maxCredit)
         {
             AccountNbr = accountNbr;
