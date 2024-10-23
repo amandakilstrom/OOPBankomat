@@ -24,3 +24,5 @@ Fixa en add account
 Randomnisera accountNbr men det får inte finnas några med samma nummer i listan
 
 Lägg till else felmeddelanden i Withdraw och deposit
+
+Betala ut ränta på ett år. Testa account balance * (interest rate * 12)

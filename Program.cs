@@ -24,9 +24,14 @@
                     "\n2. Make a withdrawl" +
                     "\n3. Show balance" +
                     "\n4. Show all accounts balance" +
-                    "\n5. Add new account\n6. Remove one account" +
-                    "\n7. Sort accounts\n9. Exit Bank");
+                    "\n5. Add new account" +
+                    "\n6. Remove one account" +
+                    "\n7. Sort accounts" +
+                    "\n8. Pay out interest to all accounts" +
+                    "\n9. Exit Bank");
                 Int32.TryParse(Console.ReadLine(), out int menuChioce);
+
+                Console.Clear();
 
                 if (menuChioce == 1)
                 {
@@ -88,9 +93,20 @@
                     }
                     EndMenu();
                 }
+                else if (menuChioce == 8)
+                {
+                    // Kallar på en funktion som har en lista som inparameter
+                    PayOutInterest.GetPayOutInterest(accounts);
+                    EndMenu();
+                }
                 else if (menuChioce == 9)
                 {
                     exit = false;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a number between 1-9");
+                    EndMenu();
                 }
             }
             while (exit);
@@ -98,7 +114,7 @@
 
         public static void EndMenu()
         {
-            Console.WriteLine("Press 'enter' to go back to main menu");
+            Console.WriteLine("Press 'enter' to go back to the main menu");
             Console.ReadLine();
             Console.Clear();
         }
