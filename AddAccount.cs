@@ -38,6 +38,12 @@ namespace OOPBankomat
             Console.Write("What is the max credit? ");
             Double.TryParse(Console.ReadLine(), out Double maxCredit);
 
+            // Om användaren skriver in ett positivt nummer görs den om till ett negativt nummer
+            if (maxCredit > 0)
+            {
+                maxCredit = maxCredit * -1;
+            }
+
             // Lägger in alla parametrar som användaren har angivet till ett objekt
             AccountInfo newAccount = new(accountNbr, name, interestRate, balance, maxCredit);
 
