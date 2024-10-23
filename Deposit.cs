@@ -31,6 +31,10 @@ namespace OOPBankomat
                         account.Balance += amount;
                     }
                 }
+                else
+                {
+                    Console.WriteLine($"Account {searchAccountNumber} was not found");
+                }
             }
         }
     }
