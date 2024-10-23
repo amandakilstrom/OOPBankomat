@@ -8,9 +8,9 @@ namespace OOPBankomat
 {
     internal class PayOutInterest
     {
-        public static Double GetPayOutInterest(Double interest)
-        {
+        //public static Double GetPayOutInterest(Double interest)
+        //{
             
-        }
+        //}
     }
 }
